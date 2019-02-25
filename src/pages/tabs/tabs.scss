@@ -1,0 +1,55 @@
+page-tabs {
+    .ion-tab-icon-base {
+        width: px2rem(50px) !important;
+        height: px2rem(48px) !important;
+        min-width: px2rem(50px) !important;
+        min-height: px2rem(48px) !important;
+        padding: px2rem(4px) px2rem(4px) px2rem(2px);
+    }
+    .ion-tab-icon-md-base {
+        min-width: 0 !important;
+        min-width: px2rem(50px) !important;
+        min-height: px2rem(48px) !important;
+        height: px2rem(50px);
+    }
+    $tabImageName: 'home' 'news' 'topics' 'my';
+    @for $i from 1 to 5 {
+        //for ios
+        .ion-ios-tab-#{nth($tabImageName, $i)} {
+            @extend .ion-tab-icon-base;
+            content: url("../../assets/icon/tabs/icon_#{nth($tabImageName, $i)}.png");
+        }
+        .ion-ios-tab-#{nth($tabImageName, $i)}-outline {
+            @extend .ion-tab-icon-base;
+            content: url("../../assets/icon/tabs/icon_#{nth($tabImageName, $i)}_outline.png");
+        }
+        // for android
+        .tabs-md .tab-button[aria-selected=true] {
+            .ion-md-tab-#{nth($tabImageName, $i)} {
+                @extend .ion-tab-icon-md-base;
+                content: url("../../assets/icon/tabs/icon_#{nth($tabImageName, $i)}.png");
+            }
+        }
+        .tabs-md .tab-button[aria-selected=false] {
+            .ion-md-tab-#{nth($tabImageName, $i)} {
+                @extend .ion-tab-icon-md-base;
+                content: url("../../assets/icon/tabs/icon_#{nth($tabImageName, $i)}_outline.png");
+            }
+        }
+    }
+    .ion-ios-tab-task,.ion-ios-tab-task-outline,.ion-ios-tab-master,.ion-ios-tab-master-outline{
+        width: px2rem(50px) !important;
+        height: px2rem(48px) !important;
+        min-width: px2rem(50px) !important;
+        min-height: px2rem(48px) !important;
+    }
+
+    .tabs-ios {
+        .tabbar{
+            height: px2rem(94px);
+        }
+        .tab-button{
+            font-size: px2rem(20px) !important;
+        }
+    }
+}
