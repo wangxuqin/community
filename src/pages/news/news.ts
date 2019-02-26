@@ -14,25 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news.html',
 })
 export class NewsPage {
+  public titles:any = ["熱點資訊", "系統公告"];
+  public index:number = 1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    this.initTab();
   }
 
-  initTab(){
-    var tabs = document.getElementsByClassName('Tab');
-    Array.prototype.forEach.call(tabs, function(tab) {
-      tab.addEventListener('click', setActiveClass);
-    });
-
-    function setActiveClass(evt) {
-      Array.prototype.forEach.call(tabs, function(tab) {
-        tab.classList.remove('active');
-      });
-      evt.currentTarget.classList.add('active');
-    }
+  public handleTabChange(msg)
+  {
+    alert("handleTabChange:" + msg);
   }
 }

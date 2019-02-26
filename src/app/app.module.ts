@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { CounterInputComponent } from '../components/counter-input/counter-input';
+import { LabelTabsComponent } from '../components/label-tabs/label-tabs';
+
+
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { TopicsPage } from '../pages/topics/topics';
@@ -15,6 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    CounterInputComponent,
+    LabelTabsComponent,
+    
     HomePage,
     NewsPage,
     TopicsPage,

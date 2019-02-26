@@ -1,0 +1,53 @@
+label-tabs {
+    .km-tabs {
+        font-size: px2rem(32px);
+        position: relative;
+        &:after {
+            content: ' ';
+            display: table;
+            clear: both;
+        }
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        .km-tabs-tab {
+            float: left;
+            text-align: center;
+            color: $default-font-color;
+        }
+    
+        .km-tabs-presentation-slider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            
+            transition: left .25s;
+            .km-tabs-presentation-slider-line{
+                width: fit-content;
+                height: px2rem(2px);
+                color: transparent;
+                margin: 0 auto;
+                background-color: $default-font-color;
+                
+            }
+        }
+    }
+    
+    .km-tab-pseudo {
+        > a {
+            display: block;
+            padding: px2rem(10px) px2rem(12px);
+            text-decoration: none;
+        }
+        &.active {
+            > a {
+                color:$default-font-color !important;
+            }
+        }
+        &:hover {
+            > a {
+                color:$default-font-color !important;
+            }
+        }
+    }
+}
