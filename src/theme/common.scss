@@ -355,16 +355,22 @@ $infinite-scroll-loading-margin-top: 0px;
 $infinite-scroll-loading-margin-bottom: 0px;
 
 ion-refresher{
+    margin-top: px2rem(-6px);
     .refresher-refreshing-icon{
-        display: none;
+        // float:bottom;
+        // width:fit-content;
     }
     .refresher-pulling-text, .refresher-refreshing-text{
         font-size: px2rem($default-title-font-size);
         color: $default-summary-color;
-        &::before{
-            content: "👍";
-        }
     }
+}
+
+
+@keyframes rotate-animation{
+    0%{ -webkit-transform: rotate(0deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    100%{ -webkit-transform: rotate(360deg);}
 }
 
 ion-infinite-scroll{
@@ -381,7 +387,17 @@ ion-infinite-scroll{
 
     .infinite-loading-text{
         &::before{
-            content: "👍";
+            font-family: "ionicons" !important;
+            font-size: pxrem(32px);
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e840";
+            margin-right: px2rem(10px);    
+            transform: translateX(-20px)
+            // -webkit-animation: rotate-animation 1s forwards;
+            // animation: rotate-animation 1s forwards;
         }
     }
 }
+

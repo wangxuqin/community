@@ -29,13 +29,32 @@ export class NewsPage {
     this.index = index;
   }
 
-  public doRefresh()
-  {
-    
+  //下拉刷型界面
+  doRefresh(refresher){
+    setTimeout(()=>{
+      refresher.complete();
+    }, 2000);
   }
 
-  public doInfinite(index)
-  {
+  public doInfinite(infiniteScroll){
 
+    setTimeout(() => {
+      infiniteScroll.complete();
+    },2000);
+
+    // //toast提示
+    // this.showInfo("加载成功");
+    // //增加index
+    // this.cnt ++;
+    // var data1 = {name:'yellowcong'+this.cnt,age:'1994', gender:'1', description:'三炮',img:"http://www.runoob.com/try/demo_source/venkman.jpg"};
+    // this.users.push(data1);
+
+
+    // if(this.cnt >=10){
+    //     //如果都加载完成的情况，就直接 disable ，移除下拉加载
+    //     infiniteScroll.enable(false);
+    //     //toast提示
+    //     this.showInfo("已加载所有");
+    // }
   }
 }
