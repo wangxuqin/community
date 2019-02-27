@@ -10,80 +10,82 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content ion-content>
+<ion-content class="disable-scroll" ion-content>
 
   <div>
     <ion-searchbar placeholder="搜索"></ion-searchbar>
     <div class="split_20"></div>
-    <label-tabs [titles]="titles" [index]="index" (onTabChanged)="handleTabChange($event);"></label-tabs>
+    <label-tabs [titles]="titles" [index]="index" (onTabChanged)="doTabChange($event);"></label-tabs>
     <div class="split_30"></div>
   </div>
 
-  <!-- <div>
-    <ion-refresher "doRefresh($event)">
-      <ion-refresher-content 
-      pullingIcon="arrow-down" 
-      pullingText="下拉刷新" 
-      refreshingSpinner="circles" 
-      refreshingText="数据加载中...">
-      </ion-refresher-content>
-    </ion-refresher>
-   </div> -->
+   <ion-content class="common-scroll" ion-content>
 
-   <ion-scroll scrollY="true" class="common-scroll">
-  <div class="column-warp">
-    <div class="news-content" *ngIf="index == 0">
-      <ul>
-        <li class="news-item" *ngFor="let n of news">
-          <div class="news-inner">
-            <img class="news-img" src="../../assets/imgs/tmp_2.png" alt="">
-            <div class="news-text-warp">
-              <p class="news-title">
-                恭喜香港麻雀線下賽完美收官！
-              </p>
-              <p class="news-summary">
-                2月18日在沙田舉辦的香港麻雀線下賽，經5輪決戰後，沙田牛哥和開心老司機獲得...
-              </p>
-              <p class="news-time">
-                2019-02-18
-              </p>
-            </div>
-          </div>
-          <div class="news_split"></div>
-        </li>
-      </ul>
-    </div>
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content 
+          pullingIcon="arrow-down" 
+          pullingText="下拉刷新" 
+          refreshingText="数据加载中...">
+          </ion-refresher-content>
+      </ion-refresher>
 
-    <div class="broadcast-content" *ngIf="index == 1">
-      <ul>
-        <li class="broadcast-item" *ngFor="let n of news">
-            <div class="broadcast-inner">
-              <span class="broadcast-left-container">
-                <p class="broadcast-date">
-                  2019-02-10
+    <div class="column-warp">
+      <div class="news-content" *ngIf="index == 0">
+        <ul>
+          <li class="news-item" *ngFor="let n of news">
+            <div class="news-inner">
+              <img class="news-img" src="../../assets/imgs/tmp_2.png" alt="">
+              <div class="news-text-warp">
+                <p class="news-title">
+                  恭喜香港麻雀線下賽完美收官！
                 </p>
-              </span>
-              <div class="broadcast-right-container">
-                <div class="broadcast-title">
-                    香港麻雀晉級賽前冠軍今晚揭曉!
-                </div>
-                <div class="broadcast-summary">
-                    2月18日在沙田舉辦的香港麻雀線下賽，經5輪決戰後，沙田牛哥和開心老司機最產獲得冠亞軍，總計現金500萬港幣!
-                </div>
+                <p class="news-summary">
+                  2月18日在沙田舉辦的香港麻雀線下賽，經5輪決戰後，沙田牛哥和開心老司機獲得...
+                </p>
+                <p class="news-time">
+                  2019-02-18
+                </p>
               </div>
             </div>
-            <div class="broadcast-split-line"></div>
-        </li>
-      </ul>
+            <div class="news_split"></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="broadcast-content" *ngIf="index == 1">
+        <ul>
+          <li class="broadcast-item" *ngFor="let n of news">
+              <div class="broadcast-inner">
+                <span class="broadcast-left-container">
+                  <p class="broadcast-date">
+                    2019-02-10
+                  </p>
+                </span>
+                <div class="broadcast-right-container">
+                  <div class="broadcast-title">
+                      香港麻雀晉級賽前冠軍今晚揭曉!
+                  </div>
+                  <div class="broadcast-summary">
+                      2月18日在沙田舉辦的香港麻雀線下賽，經5輪決戰後，沙田牛哥和開心老司機最產獲得冠亞軍，總計現金500萬港幣!
+                  </div>
+                </div>
+              </div>
+              <div class="broadcast-split-line"></div>
+          </li>
+        </ul>
+      </div>
+      
     </div>
-  </div>
-    <!-- <ion-infinite-scroll>
-      <ion-infinite-scroll-content 
-        loadingSpinner="bubbles"
-        loadingText="加载中...">   
-      </ion-infinite-scroll-content>
-  </ion-infinite-scroll> -->
-</ion-scroll>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加載中..."
+          distance="50%">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  
+  </ion-content>
 
 
 </ion-content>

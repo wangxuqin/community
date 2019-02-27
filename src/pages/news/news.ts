@@ -24,8 +24,18 @@ export class NewsPage {
   ionViewDidLoad() {
   }
 
-  public handleTabChange(index)
+  public doTabChange(index)
   {
     this.index = index;
+  }
+
+  public doRefresh()
+  {
+    
+  }
+
+  public doInfinite(index)
+  {
+
   }
 }

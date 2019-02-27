@@ -338,11 +338,50 @@ ion-avatar > img{
     height: px2rem(40px);
 }
 
-.common-scroll{
-    width: 100% !important;
-    height: calc(100% - #{px2rem(140px)}) !important;
+
+
+ion-content{
+    &.disable-scroll > div.scroll-content {
+        overflow-y: hidden !important;  
+    } 
+    
+    &.common-scroll{
+        width: 100% !important;
+        height: calc(100% - #{px2rem(76px)}) !important;
+    }
 }
 
-ion-content > div.scroll-content {
-    overflow-y: hidden !important;                                          
+$infinite-scroll-loading-margin-top: 0px;
+$infinite-scroll-loading-margin-bottom: 0px;
+
+ion-refresher{
+    .refresher-refreshing-icon{
+        display: none;
+    }
+    .refresher-pulling-text, .refresher-refreshing-text{
+        font-size: px2rem($default-title-font-size);
+        color: $default-summary-color;
+        &::before{
+            content: "👍";
+        }
+    }
+}
+
+ion-infinite-scroll{
+    font-size: px2rem($default-title-font-size);
+    color: $default-summary-color;
+    ion-infinite-scroll-content{
+        height: fit-content;
+        min-height: px2rem(84px);
+    }
+    
+    .infinite-loading-spinner{
+        display: none;
+    }
+
+    .infinite-loading-text{
+        &::before{
+            content: "👍";
+        }
+    }
 }
