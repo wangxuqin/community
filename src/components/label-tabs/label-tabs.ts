@@ -11,43 +11,75 @@ import { Input, Output, EventEmitter, Component } from '@angular/core';
   templateUrl: 'label-tabs.html'
 })
 export class LabelTabsComponent {
+  @Input() titles:any;
+  @Input() index:number;
+  @Output() onTabChanged = new EventEmitter();
+  private indexTabs:any = [];
+  private deta:number = 50;
+  private slider:HTMLElement;
+  private line:HTMLElement;
 
-  @Input() titles: any;
 
   constructor() {
 
   }
 
-  ngAfterContentInit()
+  ngAfterViewInit()
   {
     this.initTab();
   }
 
-  initTab(){
+  initTab()
+  {
     const tabs = document.getElementsByClassName('km-tabs-tab');
-    const slider = document.getElementsByClassName('km-tabs-presentation-slider')[0] as HTMLElement;
-    const line = document.getElementsByClassName('km-tabs-presentation-slider-line')[0] as HTMLElement;
-    var deta = 50;
+    this.slider = document.getElementsByClassName('km-tabs-presentation-slider')[0] as HTMLElement;
+    this.line = document.getElementsByClassName('km-tabs-presentation-slider-line')[0] as HTMLElement;
+    this.deta = 50;
     if(tabs.length > 0 ){
-      deta = (100 / tabs.length);
+      this.deta = (100 / tabs.length);
+    }
+
+    if(this.index < 0) {
+      this.index = 0;
+    }
+
+    if(this.index > tabs.length){
+      this.index = tabs.length;
     }
 
     if(tabs.length > 0 ){
-      (slider as HTMLElement).style.width = deta + "%";
+      this.slider.style.width = this.deta + "%";
     }
 
-    const indexTabs = [];
     for(var i = 0; i < tabs.length; i++){
       const tab = (tabs[i] as HTMLElement);
-      tab.style.width = deta + "%";
-      indexTabs.push(tab);
-
-      const title = (tab.getElementsByTagName("a")[0] as HTMLElement).textContent
-      tab.addEventListener("click", () => {
-        var index = indexTabs.indexOf(tab);
-        slider.style.left = (deta * index) + "%";
-        line.textContent = title;
+      tab.style.width = this.deta + "%";
+      this.indexTabs.push(tab);
+      tab.addEventListener("click", ()  => {
+        this.onTabClick(tab);
       });
+
+      if(this.index == i){
+        this.onTabClick(tab);
+      }
     }
+  }
+
+  private onTabClick(tab:HTMLElement){
+     const title = (tab.getElementsByTagName("a")[0] as HTMLElement).textContent
+     var index = this.indexTabs.indexOf(tab);
+     this.index = index;
+     this.slider.style.left = (this.deta * index) + "%";
+     this.line.textContent = title;
+
+     this.indexTabs.forEach(t => {
+        t.classList.add("km-tab-unselected");
+     });
+     
+     tab.classList.remove("km-tab-unselected");
+
+     setTimeout(() => {
+        this.onTabChanged.emit(this.index);
+     }, 500);
   }
 }

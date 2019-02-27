@@ -94,3 +94,255 @@ ion-avatar > img{
     height:px2rem(22px);
     width:px2rem(22px);
 }
+
+.column-warp{
+    border-top: px2rem(1px) solid #eee;
+    padding-left: px2rem($offset);
+    padding-right: px2rem($offset);
+    .more-nav-bar{
+        position: relative;
+        height: px2rem(32px);
+        margin-top: px2rem(30px);
+        margin-bottom: px2rem(30px);
+        .title {
+            font-size: px2rem(32px);
+            position: absolute;
+            left: px2rem(0px);
+            top: px2rem(-6px);
+        }
+        .more {
+            font-size: px2rem(22px);
+            color: #9b9b9b;
+            position: absolute;
+            right: px2rem(0px);
+        }
+    }
+}
+
+.news-content{
+    .news-item{
+        width:100%;
+        height:fit-content;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .news-inner{
+        position: relative;
+        overflow: hidden;
+        height:fit-content;
+    }
+
+    .news-img{
+        display:block;
+        width:px2rem(220px);
+        height:px2rem(140px);
+        float:left;
+    }
+
+    .news-text-warp{
+        //overflow: hidden;
+        position: absolute;
+        left: px2rem(220px);
+        height: px2rem(140px);
+        
+        .news-title{
+            color: #2c2c2c;
+            font-size: px2rem(28px);
+            margin: 0;
+            margin-left: px2rem(20px);
+        }
+    
+        .news-summary , .news-time{
+            color: #9b9b9b;
+            font-size: px2rem(22px);
+            margin: 0;
+            margin-left: px2rem(20px);
+        }
+
+        .news-summary{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-top: px2rem(6px);
+        }
+
+        .news-time{
+            position: absolute;
+            bottom:0;
+            // bottom: px2rem(-8px);
+        }
+    }
+
+    .news_split{
+        height: px2rem(40px);
+    }
+}
+
+
+.topic-content {
+    .topic-item {
+        width:100%;
+        height:fit-content;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .topic-title{
+        position: relative;
+        height: px2rem(30px);
+        .topic-title-icon{
+            position: absolute;
+            top:px2rem(1px);
+            left:px2rem(0px);
+            height: px2rem(28px);
+        }
+
+        .topic-title-text{
+            position: absolute;
+            top:px2rem(-4px);
+            left: px2rem(0px);
+            margin-block-start: 0;
+            margin-block-end: 0;
+            font-size: px2rem(28px);
+            height:  px2rem(28px);
+        }
+
+        .topic-title-official{
+            left: px2rem(60px);
+        }
+    }
+
+    .topic-summary{
+        color: #9b9b9b;
+        margin-top: px2rem(12px);
+        font-size: px2rem(22px);
+    }
+
+    .topic-info{
+        position: relative;
+        color: #9b9b9b;
+        margin-top: px2rem(12px);
+        font-size: px2rem(22px);
+        line-height: px2rem(22px);
+        height: px2rem(22px);
+        .topic-info-avatar{
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+
+        .topic-info-author{
+            position: absolute;
+            top:0;
+            left:px2rem(30px);
+        }
+
+        .topic-info-date{
+            position: absolute;
+            top:0;
+            left:25%;
+        }
+
+        .topic-info-like-num{
+            position: absolute;
+            top:0;
+            left:55%;
+            &::before{
+                content: "👍";
+            }
+        }
+
+        .topic-info-follow-num{
+            position: absolute;
+            top:0;
+            left:85%;
+            &::before{
+                content: "💬";
+            }
+        }
+    }   
+}
+
+.broadcast-content{
+    .broadcast-item{
+        height: fit-content;
+        padding-top: px2rem(20px);
+    }
+    .broadcast-inner{
+        &:after {
+            display:block; 
+            content:"clear"; 
+            clear:both; 
+            line-height:0;
+            visibility:hidden;
+        }
+       
+    }
+
+    .broadcast-left-container{
+        float:left;
+        width:fit-content;
+    }
+
+    .broadcast-right-container{
+        float:left;
+        margin-left: px2rem(40px);
+        max-width: px2rem(478px);
+    }
+
+    .broadcast-date{
+        font-size: px2rem($default-title-font-size);
+        color: $default-broadcast-date-color;
+    }
+
+    .broadcast-title{
+        font-size: px2rem($default-title-font-size);
+        color: $default-title-color;
+    }
+
+    .broadcast-summary{
+        font-size: px2rem($default-summary-font-size);
+        color: $default-summary-color;
+        margin-top: px2rem(20px);
+        max-width: px2rem(478px);
+    }
+
+    .broadcast-split-line{
+        height: px2rem(20px);
+        margin-left: px2rem(-30px);
+        width: calc(100% + #{px2rem(60px)});
+        border-bottom: px2rem(1px) solid #e6e6e6;
+    }
+}
+
+.topic_split{
+    height: px2rem(40px);
+}
+
+
+.split_10{
+    height: px2rem(10px);
+}
+
+.split_20{
+    height: px2rem(20px);
+}
+
+.split_30{
+    height: px2rem(30px);
+}
+
+.split_40{
+    height: px2rem(40px);
+}
+
+.common-scroll{
+    width: 100% !important;
+    height: calc(100% - #{px2rem(140px)}) !important;
+}
+
+ion-content > div.scroll-content {
+    overflow-y: hidden !important;                                          
+}

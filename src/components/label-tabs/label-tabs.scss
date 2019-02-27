@@ -38,16 +38,24 @@ label-tabs {
             display: block;
             padding: px2rem(10px) px2rem(12px);
             text-decoration: none;
+            // color:$default-tab-color;
+            opacity: 1.0 !important;
         }
-        &.active {
-            > a {
-                color:$default-font-color !important;
-            }
-        }
-        &:hover {
-            > a {
-                color:$default-font-color !important;
-            }
+        // &.active {
+        //     > a {
+        //         color:$default-font-color;
+        //     }
+        // }
+        // &:hover {
+        //     > a {
+        //         color:$default-font-color;
+        //     }
+        // }
+    }
+
+    .km-tab-unselected{
+        > a {
+            color:$default-tab-color !important;
         }
     }
 }

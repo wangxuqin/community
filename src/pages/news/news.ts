@@ -14,11 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news.html',
 })
 export class NewsPage {
-  titles = ["熱點資訊", "系統公告"];
+  public titles:any = ["熱點資訊", "系統公告"];
+  public index:number = 1;
+  public news:any = new Array(10);
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+  }
+
+  public handleTabChange(index)
+  {
+    this.index = index;
   }
 }
