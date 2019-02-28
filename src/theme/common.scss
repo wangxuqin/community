@@ -19,6 +19,32 @@ ol, ul {
 	list-style: none;
 }
 
+.toolbar-ios ion-title{
+    padding: 0 !important;
+}
+
+.toolbar-background{
+    height: px2rem(90px) !important;
+}
+
+.bar-button-ios{
+    min-height: px2rem(32px) !important;
+    height: px2rem(32px) !important;
+}
+
+.back-button-icon-ios {
+    margin: 0  !important;
+    margin-left: px2rem(20px) !important;
+    color: #000;
+    min-width: px2rem(44px) !important;
+    font-size: px2rem(44px) !important;
+}
+
+.back-button-text-ios{
+    display: none!important;
+    font-size: px2rem(32px) !important;
+}
+
 ion-header{
     padding-top: px2rem(40px) !important;
     padding-bottom: px2rem(32px) !important;
@@ -278,7 +304,6 @@ ion-avatar > img{
             line-height:0;
             visibility:hidden;
         }
-       
     }
 
     .broadcast-left-container{
@@ -475,4 +500,21 @@ ion-infinite-scroll{
     background-size:100% 100%;
     width: px2rem(156px);
     height: px2rem(156px);
+}
+
+.split-line{
+    margin: 0;
+    padding: 0;
+    height: 0;
+    border-bottom: px2rem(1px) solid #e6e6e6;
+}
+
+.toast-ios .toast-wrapper{
+    border-radius: px2rem(10px) !important;
+}
+.toast-message{
+    text-align: center;
+    font-size: px2rem(30px) !important;
+    padding: px2rem(30px) !important;
+
 }

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, Content } from 'ionic-angular';
+import { TopicsNewPage } from '../topics-new/topics-new';
+import { BaseUI } from '../../common/baseui';
 
 /**
  * Generated class for the TopicsPage page.
@@ -13,13 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-topics',
   templateUrl: 'topics.html',
 })
-export class TopicsPage {
+export class TopicsPage extends BaseUI{
+  @ViewChild("scroller") scroller:Content;
+  
   public titles:any = ["話題討論", "與我相關"];
   public index:number = 1;
   public topics:any = new Array(10);
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public toastCtrl: ToastController) {
+      super(toastCtrl);
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TopicsPage');
@@ -61,11 +69,11 @@ export class TopicsPage {
 
   public toTop()
   {
-    alert("返回頂部");
+    this.scroller.scrollToTop();
   }
 
   public toNewTopic()
   {
-    alert("新增話題");
+    this.navCtrl.push(TopicsNewPage);
   }
 }

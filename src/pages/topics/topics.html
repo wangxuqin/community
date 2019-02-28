@@ -13,7 +13,7 @@
     <div class="split_30"></div>
   </div>
 
-  <ion-content class="common-scroll" ion-content>
+  <ion-content class="common-scroll" ion-content #scroller>
 
     <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content pullingIcon="arrow-down" pullingText="下拉刷新" refreshingText="数据加载中...">
