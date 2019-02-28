@@ -1,4 +1,5 @@
-import { Input, Output, EventEmitter, Component } from '@angular/core';
+import { Input, Output, EventEmitter, Component, ViewChild, ElementRef } from '@angular/core';
+import { linkToSegment } from 'ionic-angular/umd/navigation/nav-util';
 
 /**
  * Generated class for the LabelTabsComponent component.
@@ -11,17 +12,17 @@ import { Input, Output, EventEmitter, Component } from '@angular/core';
   templateUrl: 'label-tabs.html'
 })
 export class LabelTabsComponent {
-  @Input() titles:any;
+  @ViewChild("tabsGroup") tabsGroup:ElementRef;
+  @ViewChild("slider") slider:ElementRef;
+  @ViewChild("line") line:ElementRef;
+  @Input() titles:any = [];
   @Input() index:number;
   @Output() onTabChanged = new EventEmitter();
   private indexTabs:any = [];
   private deta:number = 50;
-  private slider:HTMLElement;
-  private line:HTMLElement;
 
 
   constructor() {
-
   }
 
   ngAfterViewInit()
@@ -31,9 +32,8 @@ export class LabelTabsComponent {
 
   initTab()
   {
-    const tabs = document.getElementsByClassName('km-tabs-tab');
-    this.slider = document.getElementsByClassName('km-tabs-presentation-slider')[0] as HTMLElement;
-    this.line = document.getElementsByClassName('km-tabs-presentation-slider-line')[0] as HTMLElement;
+    const tabs = this.tabsGroup.nativeElement.getElementsByClassName("km-tabs-tab");
+    
     this.deta = 50;
     if(tabs.length > 0 ){
       this.deta = (100 / tabs.length);
@@ -48,7 +48,7 @@ export class LabelTabsComponent {
     }
 
     if(tabs.length > 0 ){
-      this.slider.style.width = this.deta + "%";
+      this.slider.nativeElement.style.width = this.deta + "%";
     }
 
     for(var i = 0; i < tabs.length; i++){
@@ -69,8 +69,8 @@ export class LabelTabsComponent {
      const title = (tab.getElementsByTagName("a")[0] as HTMLElement).textContent
      var index = this.indexTabs.indexOf(tab);
      this.index = index;
-     this.slider.style.left = (this.deta * index) + "%";
-     this.line.textContent = title;
+     this.slider.nativeElement.style.left = (this.deta * index) + "%";
+     this.line.nativeElement.textContent = title;
 
      this.indexTabs.forEach(t => {
         t.classList.add("km-tab-unselected");

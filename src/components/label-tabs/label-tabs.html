@@ -1,9 +1,9 @@
 <div>
   <nav>
-    <ul class="km-tabs">
+    <ul class="km-tabs" #tabsGroup>
       <li class="km-tabs-tab km-tab-pseudo" *ngFor="let title of titles"><a href="#">{{title}}</a></li>
-      <li class="km-tabs-presentation-slider">
-        <div class="km-tabs-presentation-slider-line"></div>
+      <li class="km-tabs-presentation-slider" #slider>
+        <div class="km-tabs-presentation-slider-line" #line></div>
       </li>
     </ul>
   </nav>
