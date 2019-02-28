@@ -1,18 +1,86 @@
-<!--
-  Generated template for the TopicsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>topics</ion-title>
+    <ion-title>話題</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="disable-scroll" ion-content>
 
-<ion-content padding>
+  <div>
+    <ion-searchbar placeholder="搜索"></ion-searchbar>
+    <div class="split_20"></div>
+    <label-tabs [titles]="titles" [index]="index" (onTabChanged)="doTabChange($event);"></label-tabs>
+    <div class="split_30"></div>
+  </div>
 
+  <ion-content class="common-scroll" ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-down" pullingText="下拉刷新" refreshingText="数据加载中...">
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <div class="column-warp">
+      <div class="topic-content" *ngIf="index == 0">
+        <ul>
+          <li class="topic-item" *ngFor="let t of topics">
+            <div class="topic-title">
+              <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
+              <p class="topic-title-text" [ngClass]="{'topic-title-official':true}"> 春節系列賽開賽啦~</p>
+            </div>
+            <p class="topic-summary">
+              期待已久的春節系列賽終於推出啦~打個冠軍再過節！
+            </p>
+            <div class="topic-info">
+              <ion-avatar class="topic-info-avatar">
+                <img src="https://www.computerhope.com/jargon/g/golang.gif">
+              </ion-avatar>
+              <span class="topic-info-author">
+                小棋妹
+              </span>
+
+              <span class="topic-info-date">
+                2019-02-18
+              </span>
+
+              <span class="topic-info-like-num">
+                5.2萬
+              </span>
+
+              <span class="topic-info-follow-num">
+                1000
+              </span>
+            </div>
+
+            <div class="topic_split"></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="relation-topics-content" *ngIf="index == 1">
+        <ul>
+          <li class="relation-topics-item" *ngFor="let t of topics">
+            <div class="relation-topics-warp">
+              <span class="relation-topics-reader">老司機</span>
+              <span class="relation-topics-action">評論你的話題</span>
+              <span class="relation-topics-title">鬥地主技巧如何坑農民兄弟</span>
+            </div>
+            <div class="relation-topics-date">6秒鐘前</div>
+            <div class="relation-topics-line"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多..." distance="50%">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>
+
+  <div class="float-button-container">
+    <button class="float-button-to-top" (click)="toTop()"></button>
+    <button class="float-button-new-topic" (click)="toNewTopic()"></button>
+  </div>
 </ion-content>
