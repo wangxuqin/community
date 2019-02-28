@@ -4,15 +4,56 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<div class="discuss-input-container">100</div>
+
 <ion-header>
 
   <ion-navbar>
-    <ion-title>topics-detail</ion-title>
+    <ion-title>詳情</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
+  <div class="default-padding">
+    <div class="topic-content">
+      <div class="topic-item">
+        <div class="topic-title">
+          <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
+          <p class="topic-large-title-text" [ngClass]="{'topic-title-official':true}">金條沒了怎麼快速賺金條啊！在綫等~</p>
+        </div>
+        <p class="topic-detail">
+          今天冲的1000金條在比賽場打完都輸了，還有什麼辦法贏到金條啊~
+        </p>
+        <div class="topic-info">
+          <ion-avatar class="topic-info-avatar">
+            <img src="https://www.computerhope.com/jargon/g/golang.gif">
+          </ion-avatar>
+          <span class="topic-info-author">
+            小棋妹
+          </span>
 
-<ion-content padding>
+          <span class="topic-info-date">
+            2019-02-18
+          </span>
 
+          <span class="topic-info-like-num">
+            5.2萬
+          </span>
+
+          <span class="topic-info-follow-num">
+            1000
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="split-30"></div>
+    <div class="split-padding-line"></div>
+    <div class="split-30"></div>
+
+    <div class="discuss-container">
+      <div class="discuss-list-container"></div>
+    </div>
+  </div>
 </ion-content>

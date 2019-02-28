@@ -10,19 +10,7 @@
 
   <!-- 滚动banner -->
   <ion-slides pager="true">
-    <ion-slide>
-      <img src="../../assets/imgs/tmp_1.png" alt="鬥地主競標賽">
-    </ion-slide>
-
-    <ion-slide>
-      <img src="../../assets/imgs/tmp_1.png" alt="鬥地主競標賽">
-    </ion-slide>
-
-    <ion-slide>
-      <img src="../../assets/imgs/tmp_1.png" alt="鬥地主競標賽">
-    </ion-slide>
-
-    <ion-slide>
+    <ion-slide *ngFor="let b of banners">
       <img src="../../assets/imgs/tmp_1.png" alt="鬥地主競標賽">
     </ion-slide>
   </ion-slides>
@@ -34,16 +22,16 @@
   <div class="column-warp">
     <div class="more-nav-bar">
       <span class="title">資訊</span>
-      <span class="more">更多
+      <span class="more" (tap)="toNewsTab()">更多
           <ion-icon name="arrow-forward"></ion-icon>
       </span>
       
     </div>
     <div class="news-content">
       <ul>
-        <li class="news-item">
+        <li class="news-item" *ngFor="let n of news">
           <div class="news-inner">
-            <img class="news-img" src="../../assets/imgs/tmp_2.png" alt="">
+            <img class="news-img" src="../../assets/imgs/tmp_3.png" alt="">
             <div class="news-text-warp">
               <p class="news-title">
                 恭喜香港麻雀線下賽完美收官！
@@ -58,24 +46,6 @@
           </div>
           <div class="news_split"></div>
         </li>
-
-        <li class="news-item">
-            <div class="news-inner">
-              <img class="news-img" src="../../assets/imgs/tmp_3.png" alt="">
-              <div class="news-text-warp">
-                <p class="news-title">
-                  跑馬仔回饋賽開始報名
-                </p>
-                <p class="news-summary">
-                    跑馬仔綫上回饋賽今日正式開始報名啦！之前躍躍欲試的小夥伴快來一比高下吧...
-                </p>
-                <p class="news-time">
-                  2019-02-16
-                </p>
-              </div>
-            </div>
-            <div class="news_split"></div>
-          </li>
       </ul>
     </div>
   </div>
@@ -83,7 +53,7 @@
   <div class="column-warp">
     <div class="more-nav-bar">
       <span class="title">話題</span>
-      <span class="more">更多
+      <span class="more" (tap)="toTopicsTab()">更多
           <ion-icon name="arrow-forward"></ion-icon>
       </span>
     </div>
@@ -91,7 +61,7 @@
     
     <div class="topic-content">
         <ul>
-          <li class="topic-item">
+          <li class="topic-item" *ngFor="let t of topics">
             <div class="topic-title">
               <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
               <p class="topic-title-text" [ngClass]="{'topic-title-official':true}"> 春節系列賽開賽啦~</p>
@@ -122,38 +92,6 @@
 
             <div class="topic_split"></div>
           </li>
-
-          <li class="topic-item">
-              <div class="topic-title">
-                <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
-                <p class="topic-title-text" [ngClass]="{'topic-title-official':true}"> 春節系列賽開賽啦~</p>
-              </div>
-              <p class="topic-summary">
-                  期待已久的春節系列賽終於推出啦~打個冠軍再過節！
-              </p>
-              <div class="topic-info">
-                  <ion-avatar class="topic-info-avatar">
-                      <img src="https://www.computerhope.com/jargon/g/golang.gif">
-                    </ion-avatar>
-                    <span class="topic-info-author">
-                      小棋妹
-                    </span>
-  
-                    <span class="topic-info-date">
-                      2019-02-18
-                    </span>
-  
-                    <span class="topic-info-like-num">
-                       5.2萬
-                    </span>
-  
-                    <span class="topic-info-follow-num">
-                        296
-                     </span>
-              </div>
-
-              <div class="topic_split"></div>
-            </li>
         </ul>
     </div>
   </div>

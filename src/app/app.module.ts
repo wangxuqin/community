@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
 import { TopicsPage } from '../pages/topics/topics';
 import { TopicsNewPage } from '../pages/topics-new/topics-new';
+import { TopicsDetailPage } from '../pages/topics-detail/topics-detail';
 import { MyPage } from '../pages/my/my';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -27,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewsPage,
     TopicsPage,
     TopicsNewPage,
+    TopicsDetailPage,
     MyPage,
     TabsPage
   ],
@@ -44,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NewsPage,
     TopicsPage,
     TopicsNewPage,
+    TopicsDetailPage,
     MyPage,
     TabsPage
   ],

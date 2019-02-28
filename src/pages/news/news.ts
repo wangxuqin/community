@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsPage {
   public titles:any = ["熱點資訊", "系統公告"];
-  public index:number = 1;
+  public index:number = 0;
   public news:any = new Array(10);
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

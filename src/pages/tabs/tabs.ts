@@ -17,6 +17,13 @@ export class TabsPage {
   tab3Root = TopicsPage;
   tab4Root = MyPage;
 
+  static Tabs = {
+    Home:0,
+    News:1,
+    Topics:2,
+    My:3
+  }
+
   constructor() {
 
   }

@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, Content } from 'ionic-angular';
 import { TopicsNewPage } from '../topics-new/topics-new';
 import { BaseUI } from '../../common/baseui';
+import { TopicsDetailPage } from '../topics-detail/topics-detail';
 
 /**
  * Generated class for the TopicsPage page.
@@ -19,7 +20,7 @@ export class TopicsPage extends BaseUI{
   @ViewChild("scroller") scroller:Content;
   
   public titles:any = ["話題討論", "與我相關"];
-  public index:number = 1;
+  public index:number = 0;
   public topics:any = new Array(10);
   
   constructor(
@@ -72,8 +73,12 @@ export class TopicsPage extends BaseUI{
     this.scroller.scrollToTop();
   }
 
-  public toNewTopic()
+  public toShowNewTopic()
   {
     this.navCtrl.push(TopicsNewPage);
+  }
+
+  public toShowDetailTopic(){
+    this.navCtrl.push(TopicsDetailPage);
   }
 }

@@ -23,7 +23,7 @@
     <div class="column-warp">
       <div class="topic-content" *ngIf="index == 0">
         <ul>
-          <li class="topic-item" *ngFor="let t of topics">
+          <li class="topic-item" *ngFor="let t of topics" (tap)="toShowDetailTopic()">
             <div class="topic-title">
               <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
               <p class="topic-title-text" [ngClass]="{'topic-title-official':true}"> 春節系列賽開賽啦~</p>
@@ -81,6 +81,6 @@
 
   <div class="float-button-container">
     <button class="float-button-to-top" (click)="toTop()"></button>
-    <button class="float-button-new-topic" (click)="toNewTopic()"></button>
+    <button class="float-button-new-topic" (click)="toShowNewTopic()"></button>
   </div>
 </ion-content>
