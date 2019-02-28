@@ -3,6 +3,7 @@ import { NavController, ToastController, Tabs } from 'ionic-angular';
 import { BaseUI } from '../../common/baseui';
 import { TabsPage } from '../tabs/tabs';
 import { TopicsDetailPage } from '../topics-detail/topics-detail';
+import { NewsDetailPage } from '../news-detail/news-detail';
 
 @Component({
   selector: 'page-home',
@@ -19,9 +20,9 @@ export class HomePage extends BaseUI{
       super(toastCtrl);
 
       // [[TEST]]
-      setTimeout( () => {
-        this.navCtrl.push(TopicsDetailPage);
-      }, 500);
+      // setTimeout( () => {
+      //   this.navCtrl.push(TopicsDetailPage);
+      // }, 500);
   }
 
     /**
@@ -45,4 +46,13 @@ export class HomePage extends BaseUI{
     this.selectTab(TabsPage.Tabs.Topics);
   }
 
+  public toShowNewsDetail()
+  {
+    this.navCtrl.push(NewsDetailPage);
+  }
+
+  public toShowTopicsDetail()
+  {
+    this.navCtrl.push(TopicsDetailPage);
+  }
 }

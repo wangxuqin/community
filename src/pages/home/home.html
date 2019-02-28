@@ -29,7 +29,7 @@
     </div>
     <div class="news-content">
       <ul>
-        <li class="news-item" *ngFor="let n of news">
+        <li class="news-item" *ngFor="let n of news" (tap)="toShowNewsDetail()">
           <div class="news-inner">
             <img class="news-img" src="../../assets/imgs/tmp_3.png" alt="">
             <div class="news-text-warp">
@@ -61,7 +61,7 @@
     
     <div class="topic-content">
         <ul>
-          <li class="topic-item" *ngFor="let t of topics">
+          <li class="topic-item" *ngFor="let t of topics" (tap)="toShowTopicsDetail()">
             <div class="topic-title">
               <img src="../../assets/icon/tabs/icon_official.png" class="topic-title-icon" *ngIf="true">
               <p class="topic-title-text" [ngClass]="{'topic-title-official':true}"> 春節系列賽開賽啦~</p>

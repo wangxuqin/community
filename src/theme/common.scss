@@ -577,17 +577,41 @@ ion-infinite-scroll {
 
 }
 
-.discuss-container {
-    background-color: blue;
-    height:1000px;
+.discuss-list-container {
+  
+  .discuss-item{
+    font-size: px2rem(22px);
+  }
+
+  .discuss-warp{
+    float:left;
+    color: #2c2c2c;
+    .discuss-avatar{
+      display: inline-block;
+      padding-top: px2rem(4px)
+    }
+  
+    .discuss-author{
+      display: inline-block;
+    }
+  }
+
+  .discuss-content{
+    color: #5f5e5e;
+  }
+
+  .discuss-date{
+    padding-top: px2rem(20px);
+    color: #9b9b9b;
+  }
+
+
 }
 
 .discuss-input-container{
-    position: fixed;
-    background-color: green;
+    position: absolute;
     bottom: px2rem(94px);
-    padding: px2rem(30px);
-    height: px2rem(58px) !important;
-    width: 100%;
+    left: px2rem(30px);
+    right: px2rem(30px);
     z-index: 1;
 }

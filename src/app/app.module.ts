@@ -9,6 +9,7 @@ import { LabelTabsComponent } from '../components/label-tabs/label-tabs';
 
 import { HomePage } from '../pages/home/home';
 import { NewsPage } from '../pages/news/news';
+import { NewsDetailPage } from '../pages/news-detail/news-detail';
 import { TopicsPage } from '../pages/topics/topics';
 import { TopicsNewPage } from '../pages/topics-new/topics-new';
 import { TopicsDetailPage } from '../pages/topics-detail/topics-detail';
@@ -26,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     
     HomePage,
     NewsPage,
+    NewsDetailPage,
     TopicsPage,
     TopicsNewPage,
     TopicsDetailPage,
@@ -44,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     NewsPage,
+    NewsDetailPage,
     TopicsPage,
     TopicsNewPage,
     TopicsDetailPage,
