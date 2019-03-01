@@ -9,7 +9,7 @@
 <ion-content>
   <div class="my-container">
     <div class="split-padding-line"></div>
-    <div class="my-info-container">
+    <div class="my-info-container" (tap)="showToast('查看個人主頁或編輯簡介')">
       <ion-avatar>
         <img src="http://www.downfeng.com/article/UploadPic/2015-10/2015101914824937.jpg" />
       </ion-avatar>
@@ -18,22 +18,26 @@
         <p class="my-name">拆遷大隊長</p>
         <p class="my-check-or-edit">查看個人主頁或編輯簡介</p>
       </div>
+      <div class="my-info-arrow"></div>
     </div>
 
     <div class="split-padding-line"></div>
 
     <div class="my-act-container">
-      <div class="my-act-item">
+      <div class="my-act-item" (tap)="showToast('我的話題')">
         <ion-icon class="my-act-icon" name="paper" item-start color="primary"></ion-icon>
         <ion-label class="my-act-title">我的話題</ion-label>
+        <div class="my-act-arrow"></div>
       </div>
-      <div class="my-act-item">
+      <div class="my-act-item" (tap)="showToast('我的收藏')">
         <ion-icon class="my-act-icon" name="star" item-start color="orange"></ion-icon>
         <ion-label class="my-act-title">我的收藏</ion-label>
+        <div class="my-act-arrow"></div>
       </div>
-      <div class="my-act-item">
+      <div class="my-act-item" (tap)="showToast('我的評論')">
         <ion-icon class="my-act-icon" name="text" item-start color="secondary"></ion-icon>
         <ion-label class="my-act-title">我的評論</ion-label>
+        <div class="my-act-arrow"></div>
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { BasePage } from '../../common/basepage';
 
 /**
  * Generated class for the MyPage page.
@@ -13,9 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-my',
   templateUrl: 'my.html',
 })
-export class MyPage {
+export class MyPage extends BasePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public toastCtrl: ToastController) {
+      super(navCtrl, navParams, toastCtrl);
   }
 
   ionViewDidLoad() {
