@@ -15,14 +15,14 @@
     </ion-slide>
   </ion-slides>
 
-  <div class="announcement" text-center>
-      <span class="announcement-prefix">公告:</span>&nbsp;2019.1.1進行停服更新
+  <div class="broadcast" text-center (tap)="toShowBroadcastDetail()">
+      <span class="broadcast-prefix">公告:</span>&nbsp;2019.1.1進行停服更新
   </div>
 
   <div class="column-warp">
     <div class="more-nav-bar">
       <span class="title">資訊</span>
-      <span class="more" (tap)="toNewsTab()">更多
+      <span class="more" (tap)="toShowNewsTab()">更多
           <ion-icon name="arrow-forward"></ion-icon>
       </span>
       
@@ -53,7 +53,7 @@
   <div class="column-warp">
     <div class="more-nav-bar">
       <span class="title">話題</span>
-      <span class="more" (tap)="toTopicsTab()">更多
+      <span class="more" (tap)="toShowTopicsTab()">更多
           <ion-icon name="arrow-forward"></ion-icon>
       </span>
     </div>
