@@ -528,11 +528,12 @@ ion-infinite-scroll {
 }
 
 .float-button-container {
-  position: fixed;
+  position: absolute;
   right: px2rem(42px);
   bottom: px2rem(0px);
   height: fit-content;
   width: fit-content;
+  z-index: 1;
 }
 
 .float-button-to-top {
