@@ -113,13 +113,13 @@ ion-searchbar {
 }
 
 
-.announcement {
+.broadcast {
   font-size: px2rem(24px);
   color: #9b9b9b;
   margin-top: px2rem(10px);
   margin-bottom: px2rem(10px);
 
-  .announcement-prefix {
+  .broadcast-prefix {
     color: #5276f1;
     height: 100%;
   }
@@ -528,11 +528,12 @@ ion-infinite-scroll {
 }
 
 .float-button-container {
-  position: fixed;
+  position: absolute;
   right: px2rem(42px);
   bottom: px2rem(0px);
   height: fit-content;
   width: fit-content;
+  z-index: 1;
 }
 
 .float-button-to-top {
@@ -614,4 +615,29 @@ ion-infinite-scroll {
     left: px2rem(30px);
     right: px2rem(30px);
     z-index: 1;
+
+    .discuss-input{
+      display: block;
+      font-size: px2rem(22px) !important;
+      color: #9b9b9b;
+      background-color: #f4f4f4;
+      height: px2rem(56px) !important;
+      width: px2rem(580px) !important;
+      padding: 0;
+      text-indent: px2rem(16px);
+      border: 0;
+    }
+
+    .disuss-send{
+      position: absolute;
+      width: fit-content !important;
+      height: px2rem(56px) !important;
+      font-size: px2rem(32px) !important;
+      margin-top: px2rem(-56px);
+      margin-left: px2rem(596px);
+      padding: 0;
+      color: #5276f1;
+      background-color: transparent;
+      border: 0;
+    }
 }

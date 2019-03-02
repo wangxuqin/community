@@ -1,3 +1,97 @@
 page-my {
+  .my-container {
+    background-color: #e4e5e7;
 
+    font-size: px2rem(30px);
+    height: 100%;
+
+    .my-info-container {
+      background-color: #ffffff;
+      margin-top: px2rem(10px);
+      padding-top: px2rem(30px);
+      padding-bottom: px2rem(30px);
+
+      ion-avatar,
+      ion-avatar>img {
+        margin-left: px2rem(15px);
+        border-radius: 50%;
+        height: px2rem(90px);
+        width: px2rem(90px);
+      }
+
+
+      .my-info-text-container {
+        position: absolute;
+        margin-left: px2rem(130px);
+        margin-top: px2rem(-90px);
+
+        .my-name {
+          font-size: px2rem(42px);
+          font-weight: bolder;
+        }
+
+        .my-check-or-edit {
+          font-size: px2rem(24px);
+          color: #9b9b9b;
+        }
+      }
+
+      .my-info-arrow {
+        position: absolute;
+        right: px2rem(30px);
+        margin-top: px2rem(-60px);
+
+        &:before {
+          color: #C7C7C9;
+          font-family: "ionicons" !important;
+          font-size: px2rem(32px);
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: $default-icon-arrow-right;
+        }
+      }
+    }
+
+    .my-act-container {
+      margin-top: px2rem(40px);
+      height: fit-content;
+
+      .my-act-item {
+        background-color: #ffffff;
+        margin-bottom: px2rem(2px);
+        padding-top: px2rem(20px);
+        padding-bottom: px2rem(20px);
+      }
+
+      .my-act-icon {
+        font-size: px2rem(60px);
+        margin-left: px2rem(30px);
+      }
+
+      .my-act-title {
+        position: absolute;
+        color: #000;
+        font-size: px2rem(32px);
+        margin-top: px2rem(-50px);
+        margin-left: px2rem(110px);
+      }
+
+      .my-act-arrow {
+        position: absolute;
+        right: px2rem(30px);
+        margin-top: px2rem(-40px);
+
+        &:before {
+          color: #C7C7C9;
+          font-family: "ionicons" !important;
+          font-size: px2rem(32px);
+          font-style: normal;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: $default-icon-arrow-right;
+        }
+      }
+    }
+  }
 }

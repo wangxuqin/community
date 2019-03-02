@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  orange:     #ffa500
 );
 
 $default-font-color: #5276f1;
@@ -59,6 +60,9 @@ $default-gray-color: #9b9b9b;
 $default-big-font-size: 28px;
 $default-middle-font-size: 26px;
 $default-small-font-size: 22px;
+
+$default-icon-arrow-right: '\e632';
+$default-icon-loading: '\e840';
 
 
 
